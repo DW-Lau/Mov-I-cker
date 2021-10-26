@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies v2</title>
+</head>
+<body class="day">
+    <header class="day"> 
+        <h1> Mov-I-cker</h1>
+        <div id="switch">
+           <button class="switch"> Nuit</button>
+        </div>
+    </header>
+
+    <section class="day">
+            <aside>
+                <div class="bloc-predef">
+                    <form class="form-categorie">
+                        <label for="comedie" >
+                            <input type="radio" name="categories" value="comedie" class="btn--cat comedie"  />Comedie
+                        </label>
+                        <label for="horreur">
+                            <input type="radio" name="categories" value="horreur" class="btn--cat horreur"/>Horreur
+                        </label>
+                        <label for="superheros">
+                                <input type="radio" name="categories" value="superheros" class="btn--cat superheros"/>Super Héros
+                        </label>
+                        <label for="sf"> 
+                            <input type="radio" name="categories" value="sf" class="btn--cat sf"/>Science Fiction
+                        </label>
+                        <label for="comrom">
+                            <input type="radio" name="categories" value="comrom" class="btn--cat comrom"/>Comédie romantique
+                        </label>
+                        <label for="animation">
+                            <input type="radio" name="categories" value="animation" class="btn--cat animation"/>Animation
+                        </label>
+                        <label for="libre"> 
+                            <input type="radio" name="categories" value="libre" class="btn--cat libre" />Créer sa liste perso :
+                        </label>
+                    </form>
+                    <div class="list-predef">
+                        <ul class="predef_title">
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="bloc-perso">
+                    <form class="form-categorie">
+                       
+           
+                        <div class="inputAdds">
+                            <input type="text" class="addTitles" > 
+                                <button class="btn-add " >
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                        </div>
+                    </form>
+                    <div class="errors">
+                        <p class="msg"></p>
+                    </div>
+                    <div class="perso-container">
+                        <ul class="perso-list"></ul>
+                      </div>                  
+                </div>
+                <button class="btn-selection" >
+                    <i class="fas fa-random"></i>
+                </button>
+            </aside>
+            <article>
+                    <h2>Selection du soir !</h2>
+                    <p class="resultatMovie"></p>
+              
+            </article>
+    </section>
+    <footer class="day">
+        <p>appli sélecteur de film : v.1.2 , Laura L , 2021</p>
+    </footer>
+</body>
+<script src="appli.js"></script>
+<script src="switchmode.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>

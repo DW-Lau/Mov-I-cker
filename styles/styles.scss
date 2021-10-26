@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$titres:'Montserrat';
+$textes: 'Roboto';
+$backgroundJour:linear-gradient(270.4deg, #F2DCDE 0.38%, rgba(242, 220, 222, 0) 99.7%);
+$backgroundHeader:#F23D3D;
+@mixin aligment($direction,$justify,$align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin wrapping ($wrap,$justify,$align){
+    display:flex;
+    flex-wrap:$wrap;    
+    justify-content: $justify;
+    align-items: $align;
+
+}
+ul li, p,label,input{
+    font-family: $textes;
+    list-style: none;
+}
+.btn{
+    cursor:help;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    @include aligment(column,space-between,center);
+    background: $backgroundJour;
+    
+    header,footer{
+        width: 100%;
+        height: 10vh;
+        @include aligment(flex,space-between,center);
+        background: $backgroundHeader;
+        h1{
+            color: white;
+            width: 70%;
+            margin: auto;
+            font-family: $titres;
+            font-weight: lighter;
+            font-size: 3.5em;
+        }
+    
+    
+    }
+    .night{
+        background: #242424;
+        color:white;
+        
+    }
+    .msg{
+        display: none;
+    }
+    .msgError{
+        display: block;
+        color:white;
+    }
+    section{
+        @include aligment(flex,space-between ,center );
+        width: 90%;
+        height: 88vh;
+        margin: auto;
+
+        aside,article{
+            max-height: 80vh;
+            min-height: 70vh;
+            width: 50%;
+        }
+        aside{
+           
+            @include wrapping(wrap,center ,center );
+           
+            .bloc-predef,.bloc-perso{
+                @include aligment(column,space-between ,flex-start );
+                width: 50%; 
+                min-height: 25vh;
+               
+                .form-categorie{
+                    width: 100%;
+                    @include aligment(column,space-around ,flex-start );
+                    
+                    input{
+                        padding: 0.5rem;
+                        margin: 0.5rem;
+                    }
+                }
+                .inputAdds{
+                    @include aligment(row,space-around ,center );
+                    width: 100%;
+                    .btn-add{
+                        background: $backgroundHeader;
+                        font-size: 1em;
+                        padding: 0.5rem 1.5rem;
+                        color: white;
+                        border-radius: 25px;
+                    }
+                   
+                } .fa-film{
+                        font-size: 2rem;
+                    }
+            }
+            .btn,.btn-selection{
+                max-width: 100%;
+                margin: 1rem 3rem;
+                padding: 1.5rem;
+                border-radius: 25px;
+                background-color: #242424;
+                color:white;
+                font-size: 3em;
+                text-align: center;
+            }
+            .btn:hover,.btn-selection:hover{
+                animation: btnHover infinite 1s ease-in-out;
+                //background-color: #F23D3D;
+            }
+            .btn-add:hover,.btn-selection:hover{
+               animation: btnHover infinite 0.5s ease-in-out;
+            
+            }
+            .deleted-btn{
+                padding:0.25rem;
+                background-color:red;
+                border-radius: 5px;
+                color: white;
+            }
+            @keyframes btnHover {
+                from{
+                    transform: scale(1);
+                }to{
+                    transform: scale(1.1) ;
+                }
+            }
+            
+            
+        }
+        article{
+            h2{
+                font-size: 2.5em;
+                font-family: $titres;
+                text-align: center;
+                width: 100%;
+            }
+            .perso_titles{
+                display: block;
+                height: 150px;
+            }  
+        }
+    }
+
+}
